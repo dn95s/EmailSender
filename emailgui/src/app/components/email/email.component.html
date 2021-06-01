@@ -1,0 +1,31 @@
+<div class="container">
+    
+    <div class="card">
+
+        <form (ngSubmit)="doSubmitForm()">
+
+        <h1>Wyślij Wiadomość</h1>
+        {{ data | json }}
+        <mat-form-field class="field" appearance="outline">
+            <mat-label>Adres odbiorcy</mat-label>
+            <input name="to" [(ngModel)]="data.to" matInput>
+        </mat-form-field>
+        <mat-form-field class="field" appearance="outline">
+            <mat-label>Temat</mat-label>
+            <input name="subject" [(ngModel)]="data.subject" matInput>
+        </mat-form-field>
+        <mat-form-field class="field" appearance="outline">
+            <mat-label>Wiadomość</mat-label>
+            <textarea name="message" [(ngModel)]="data.message" rows="20" matInput></textarea>
+        </mat-form-field>
+
+        <div class="class-center">
+
+            <button type="submit" mat-raised-button color="primary">Wyślij</button>
+            <button type="reset" mat-raised-button color="accent">Reset</button>
+
+        </div>
+
+    </form>
+    </div>
+</div>
